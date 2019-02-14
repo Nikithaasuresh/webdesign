@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> LOGISTIC MANAGEMENT </title>
+<style>
+     body{
+        background-color: crimson;
+    }
+
+aside{
+  float:right;
+   background-color:peachpuff;
+     height: 600px;
+    width:300px;
+    margin:30px;
+    padding: 30px;
+}
+   
+footer{
+float:bottom;
+}
+nav{
+float:top;
+    background-color:antiquewhite;
+    height: 30px;
+    margin: -10px;
+    padding: 10px;
+    text-align: center;
+ 
+}
+    a{
+        text-decoration: none;
+        color:firebrick;
+        font-size: 16pt;
+    }
+    header{
+        margin: 10px;
+        padding: 10px;
+        height: 100px;
+        width: 1320px;
+        background-color:darksalmon;
+     text-decoration-color: navy;
+        text-decoration-style: solid;
+        font-size: 20pt;
+    }
+    section{
+       margin: 10px;
+        height: 50px;
+        padding: 10px;
+        width: 50px;
+        float:left;
+    }
+    article{
+        float: left;
+        text-align: center;
+    }
+    #ro{
+   text-align: center;
+    }
+    #du{
+        text-align: center;
+    }
+    #go{
+     color: navy;
+    }
+    </style>
+    </head>
+
+<body><header>
+    <center> <h1 id="go"> LOGISTIC MANAGEMENT </h1></center></header>
+
+<nav>
+   
+<a href="log.html">|HomePage|</a>
+    <a href="service.html">Services|</a>
+<a href="Gallery.html">Contact us|</a>
+<a href="about.html">About us|</a>
+
+    </nav>
+    <article> <h1 id="du"> Welcome to Alaza Logistics</h1>
+    <p id="ro"> We are offering lot of services through turck and freight</p>
+<marquee><img src="tg.jpg" width="300px" height="200px"> <img src="los.jpg" width="300px" height="200px">
+<img src="ships.jpg"width="300px" height="200px">
+</marquee>
+    </article> 
+<aside><form onsubmit="return check_validation(this);" action="book.html"><table>
+<center><h1> Sign up</h1><p id="s2"></p>
+<tr><td><label>Name</label></td><td><input type="text" name="nam" id="us" pattern="[a-zA-Z]*"required><p class="p1" id="err1"></p></td></tr><br> 
+<tr><td><label>Mobile number</label></td><td><input type="text" name="num" id="mob"maxlength="10"  pattern="[0-9]{10}"required><p class="p1" id="err2"></td></tr><br> 
+<tr><td><label>Email</label></td><td><input type="email" name="ema" id="em"required><p class="p1" id="err3"></td></tr><br> 
+<tr><td><label>Office Name</label></td><td><input type="text" id="of" name="off" pattern="[a-zA-Z]*"><p class="p1" id="err4"></td></tr><br> 
+<tr><td><label>Address</label></td><td><input type="text" id="as" name="add" required><p class="p1" id="err5"></td></tr><br> <br>
+    <tr><td></td><td><input type="button" id="reg" value="Register"></td></tr><br> 
+</center>
+</table>
+
+    </form>
+</aside>
+    <script> 
+     var btn=document.getElementById('reg');
+          btn.onclick=function(e){
+              check_validation();
+          }
+          function check_validation(){
+              var name=document.getElementById('us');
+              var mob=document.getElementById('mob');
+              var mail=document.getElementById('em');
+              var off=document.getElementById('of');
+              var add=document.getElementById('as');
+            
+              document.getElementById("err3").innerHTML="";      
+              if(name.checkValidity)
+              {
+                  document.getElementById("err1").innerHTML=name.validationMessage;
+              }
+                  if(mob.validity.valueMissing){
+                  //console.log("required");
+                  document.getElementById("err2").innerHTML=off.validationMessage;
+              }
+              else if(mob.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err2").innerHTML="Invalid Phone Number";   
+              }
+              else{
+                  //console.log("right");
+                   document.getElementById("err2").innerHTML=" ";   
+              }
+          
+              if(mail.checkValidity)
+              {
+                  console.log("required");
+                  document.getElementById("err3").innerHTML=mail.validationMessage;
+              }
+              else{
+                  console.log("right");
+                  document.getElementById("err3").innerHTML=" ";   
+              }
+              if(off.checkValidity){
+                   document.getElementById("err4").innerHTML=add.validationMessage;
+
+              }
+                 if(add.checkValidity){
+                   document.getElementById("err5").innerHTML=add.validationMessage;
+               }
+
+          }
+
+    
+    </script>
+
+    </body>
+</html>
+    

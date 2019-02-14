@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Booking </title>
+<style>
+    body{
+        background-image: url(ships.jpg);
+        background-size: 1450px;
+    }
+    section{
+        margin: 10px;
+        padding: 10px;
+        float: left;
+    }
+    #ss{
+     background-color:firebrick;
+        font-style: bold;
+        text-decoration-style: solid;
+    }
+   #ho{
+        text-decoration-color: black;
+        text-decoration-style: solid;
+        font-size: 30pt;
+        font-family: serif;
+    }
+    a{
+        text-decoration: none;
+        font-size: 18pt;
+        color: darkred;
+        text-decoration-style: solid;
+    }
+</style>
+
+</head>
+
+<body bgcolor=""><header>
+<center> <h1> Shipping Book page </h1></center>
+<i id="ho">Welcome to Alaza  ship Booking page</i>
+</header>
+    <nav>
+<a href="book.html">|Truck booking</a>
+<a href="service.html">|Truck Services|</a>
+<a href="shipu.html">|Ship services|</a>
+    </nav>
+
+    <section>
+<form><center>
+<table>
+<tr><td><label>Name</label></td><td><input type="text"name="name" id="1" pattern="[a-zA-Z]*"required><p class="p2" class="err6"></p></td></tr><br>
+<tr><td><label>email id</label></td><td><input type="email"name="em" id="2" placeholder="alaza@gmail.com" required><p class="p2" class="err7"></p></td></tr><br>
+<tr><td><label>Mobile number</label></td><td><input type="text"name="mob" id="3" maxlength="10" pattern="[0-9]{10}"required><p class="p2" class="err8"></p></td></tr><br>
+<tr><td><label for="date">Date Of Booking:</label>
+<td><input type="date" id="date" onload="getdate()" class="form-control" id="date" name="date"></td><br>
+    <tr><td><label>Address</label></td><td><input type="text"name="mob" id="5" required><p class="p2" class="err14"></p></td></tr><br>
+
+<tr><td><label>No.of Goods</label></td><td><select name="Goods"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></td></tr><br>
+<tr><td><label>Source</label></td><td><select name ="src"><option value="chennai">Chennai</option><option value="srilanka">Srilanka</option><option value="singapore">singapore</option></select>
+<tr><td><label>Destination</label></td><td><select name ="dst"><option value="chennai">Chennai</option><option value="madurai">Madurai</option><option value="trichy">Trichy</option></select>
+<tr><td><label>Type of transportation</label></td><td><input type="radio"name="trans"type="normal">Normal<input type="radio"name="trans"type="fast">Speed</td></tr><br>
+<tr><td></td><td><input type="submit"value="submit" id="ss"required></td></tr>
+
+    </td></tr></td></tr></table></center></form></section>
+    <script> 
+     var btns=document.getElementById('ss');
+          btns.onclick=function(e){
+              check_validation();
+          }
+          function check_validation1(){
+              var names=document.getElementById('1');
+              var emails=document.getElementById('2');
+              var mob=document.getElementById('3');
+              var ad=document.getElementById('5');
+            
+              document.getElementById("err7").innerHTML="";      
+              if(names.checkValidity)
+              {
+                  document.getElementById("err6").innerHTML=names.validationMessage;
+              }
+                  if(mob.validity.valueMissing){
+                  //console.log("required");
+                  document.getElementById("err8").innerHTML=off.validationMessage;
+              }
+              else if(mob.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err8").innerHTML="Invalid Phone Number";   
+              }
+              else{
+                  //console.log("right");
+                   document.getElementById("err8").innerHTML=" ";   
+              }
+          
+              if(emails.checkValidity)
+              {
+                  console.log("required");
+                  document.getElementById("err7").innerHTML=emails.validationMessage;
+              }
+              else{
+                  console.log("right");
+                  document.getElementById("err7").innerHTML=" ";   
+              }
+              if(ad.checkValidity){
+                   document.getElementById("err14").innerHTML=add.validationMessage;
+
+              }
+
+          }
+
+    
+    </script>
+
+
+</body>
+</html>
